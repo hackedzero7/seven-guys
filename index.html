@@ -186,6 +186,58 @@ footer{background:var(--green-deep);color:#D8EADD;padding-block:40px;border-top:
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* ORDER CART */
+.add{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 16px;border:3px solid var(--ink);border-radius:999px;background:var(--mustard);color:var(--ink);font-family:var(--body);font-weight:800;font-size:15px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .12s ease}
+.add:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.add.done{background:var(--green);color:#fff}
+.opt-row{display:flex;flex-wrap:wrap;gap:8px;padding-top:4px}
+.opt{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:2px solid var(--ink);border-radius:12px;background:#fff;font-family:var(--body);font-weight:700;font-size:14px;cursor:pointer;color:var(--ink)}
+.opt b{color:var(--green)}
+.opt:hover{background:var(--mustard-soft)}
+.nav-cart{position:relative;border:var(--line)}
+.count{position:absolute;top:-10px;right:-8px;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--tomato);color:#fff;border:2px solid var(--ink);font-size:13px;font-weight:800;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.fab{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:14px;min-height:60px;padding:0 10px 0 22px;border:var(--line);border-radius:999px;background:var(--ink);color:#fff;font-family:var(--body);font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);max-width:calc(100% - 32px)}
+.fab .go{background:var(--mustard);color:var(--ink);border-radius:999px;padding:10px 16px;white-space:nowrap}
+.fab .sum{white-space:nowrap;font-variant-numeric:tabular-nums}
+dialog.cart{width:min(560px,calc(100% - 24px));max-height:calc(100% - 24px);padding:0;border:var(--line);border-radius:26px;background:var(--paper);color:var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden}
+dialog.cart::backdrop{background:rgba(6,61,31,.72)}
+.cart-in{display:flex;flex-direction:column;max-height:calc(100dvh - 24px)}
+.cart-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;background:var(--green);color:#fff;border-bottom:var(--line)}
+.cart-head h2{font-size:34px}
+.x{width:44px;height:44px;border-radius:50%;border:3px solid var(--ink);background:var(--mustard);display:grid;place-items:center;cursor:pointer}
+.cart-body{overflow-y:auto;padding:20px 22px;display:flex;flex-direction:column;gap:18px}
+.lines{display:flex;flex-direction:column;gap:10px}
+.line{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;background:#fff;border:3px solid var(--ink);border-radius:16px;padding:10px 12px}
+.line .nm{font-weight:800;min-width:0}
+.line .nm small{display:block;font-weight:600;color:var(--muted)}
+.qty{display:flex;align-items:center;gap:4px}
+.qty button{width:36px;height:36px;border-radius:10px;border:2px solid var(--ink);background:var(--mustard-soft);font-weight:900;font-size:18px;cursor:pointer;color:var(--ink)}
+.qty span{min-width:24px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
+.line .lp{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.empty{background:#fff;border:3px dashed var(--ink);border-radius:16px;padding:22px;text-align:center;font-weight:600}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:3px dashed var(--ink);padding-top:12px}
+.total b{font-family:var(--display);font-weight:400;font-size:38px;font-variant-numeric:tabular-nums}
+.form{display:flex;flex-direction:column;gap:14px}
+.form .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.legend{font-weight:800;font-size:14px}
+.field input,.field select,.field textarea{min-height:48px;padding:10px 14px;border:3px solid var(--ink);border-radius:14px;background:#fff;font-family:var(--body);font-size:16px;color:var(--ink);width:100%}
+.field textarea{min-height:76px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--mustard);outline-offset:1px}
+.types{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.types label{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border:3px solid var(--ink);border-radius:14px;background:#fff;font-weight:800;cursor:pointer}
+.types input{position:absolute;opacity:0;pointer-events:none}
+.types input:checked+label{background:var(--ink);color:var(--mustard)}
+.types input:focus-visible+label{outline:4px solid var(--tomato);outline-offset:2px}
+.err{color:var(--tomato);font-weight:800;font-size:14px;min-height:18px}
+.cart-foot{padding:16px 22px calc(16px + env(safe-area-inset-bottom,0px));border-top:var(--line);background:#fff;display:flex;flex-direction:column;gap:8px}
+.send{width:100%;background:#1E9E4A;color:#fff}
+.send[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
+.fine{font-size:13px;color:var(--muted);text-align:center;margin:0}
+.toast{position:fixed;left:50%;top:calc(96px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:70;background:var(--green);color:#fff;border:3px solid var(--ink);border-radius:999px;padding:10px 18px;font-weight:800;box-shadow:4px 4px 0 var(--ink);max-width:calc(100% - 32px)}
+body.has-cart main{padding-bottom:96px}
+@media (max-width:560px){.form .two{grid-template-columns:minmax(0,1fr)}.cart-head h2{font-size:28px}}
 </style>
 </head>
 <body>
@@ -300,10 +352,11 @@ footer{background:var(--green-deep);color:#D8EADD;padding-block:40px;border-top:
     <nav class="nav-links" aria-label="Main">
       <a href="#crown">Signature</a><a href="#menu">Menu</a><a href="#deals">Deals</a><a href="#branches">Branches</a>
     </nav>
-    <a class="btn btn-mustard" href="https://wa.me/923194800036">
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg>
-      <span>Order now</span>
-    </a>
+    <button class="btn btn-mustard nav-cart" type="button" data-open-cart aria-label="Open your order">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <span>My order</span>
+      <span class="count" data-count hidden>0</span>
+    </button>
   </div>
 </header>
 
@@ -360,7 +413,7 @@ footer{background:var(--green-deep);color:#D8EADD;padding-block:40px;border-top:
         <p>Gen Z chicken and kebab crowns on a crispy Detroit square base, with mozzarella, black olives, onions and capsicum. Finished with base sauce and a creamy drizzle on top.</p>
         <div class="tags"><span>Kebab crowns</span><span>Mozzarella</span><span>Creamy drizzle</span><span>Square crust</span></div>
         <div class="big-price"><b>Rs 1650</b><small>Large only</small></div>
-        <div><a class="btn btn-mustard" href="https://wa.me/923194800036">Order the Crown</a></div>
+        <div><button class="btn btn-mustard" type="button" data-item="Gen Z Crown" data-detail="Large" data-price="1650">Add the Crown to order</button></div>
       </div>
     </div>
   </section>
@@ -442,7 +495,14 @@ footer{background:var(--green-deep);color:#D8EADD;padding-block:40px;border-top:
           <article class="card"><div class="card-art bg-mustard"><svg viewBox="0 0 300 240" role="img" aria-label="Chicken nuggets"><use href="#nuggets"/></svg></div>
             <div class="card-body"><h3>Chicken Nuggets</h3><p>6 pcs, crispy outside and juicy inside.</p><div class="card-foot"><span class="price">Rs 400</span></div></div></article>
           <article class="card"><div class="card-art bg-green"><svg viewBox="0 0 300 320" role="img" aria-label="Fries"><use href="#fries"/></svg></div>
-            <div class="card-body"><h3>Fries &amp; Drinks</h3><p>Plain fries Rs 300, regular fries Rs 200. Drinks 345 ml Rs 80, 1.5 L Rs 220, water Rs 70.</p><div class="card-foot"><span class="price">from Rs 70</span></div></div></article>
+            <div class="card-body"><h3>Fries &amp; Drinks</h3><p>Tap any option to add it to your order.</p>
+              <div class="opt-row">
+                <button class="opt" type="button" data-item="Plain Fries" data-price="300">Plain fries <b>300</b></button>
+                <button class="opt" type="button" data-item="Regular Fries" data-price="200">Regular fries <b>200</b></button>
+                <button class="opt" type="button" data-item="Drink" data-detail="345 ml" data-price="80">Drink 345 ml <b>80</b></button>
+                <button class="opt" type="button" data-item="Drink" data-detail="1.5 L" data-price="220">Drink 1.5 L <b>220</b></button>
+                <button class="opt" type="button" data-item="Small Water" data-price="70">Water <b>70</b></button>
+              </div></div></article>
         </div>
       </div>
     </div>
@@ -460,28 +520,28 @@ footer{background:var(--green-deep);color:#D8EADD;padding-block:40px;border-top:
           <div class="deal-art" aria-hidden="true"><svg viewBox="0 0 400 360"><use href="#burger"/></svg><svg viewBox="0 0 300 320"><use href="#fries"/></svg><svg viewBox="0 0 200 300"><use href="#cup"/></svg></div>
           <ul><li>1 Fillet Crunch burger</li><li>1 drink, 345 ml</li><li>Regular fries</li></ul>
           <div class="tear"></div>
-          <div class="bottom"><b>Rs 520</b><a class="btn btn-green" href="https://wa.me/923194800036">Order</a></div>
+          <div class="bottom"><b>Rs 520</b><button class="btn btn-green" type="button" data-deal data-price="520">Add</button></div>
         </article>
         <article class="ticket alt">
           <div class="top"><h3>Deal 2</h3><span class="who">FOR 2</span></div>
           <div class="deal-art" aria-hidden="true"><svg viewBox="0 0 400 360"><use href="#burger"/></svg><svg viewBox="0 0 400 360"><use href="#burger"/></svg><svg viewBox="0 0 200 300"><use href="#cup"/></svg></div>
           <ul><li>2 Fillet Crunch burgers</li><li>2 drinks, 345 ml</li><li>Regular fries</li></ul>
           <div class="tear"></div>
-          <div class="bottom"><b>Rs 920</b><a class="btn btn-ink" href="https://wa.me/923194800036">Order</a></div>
+          <div class="bottom"><b>Rs 920</b><button class="btn btn-ink" type="button" data-deal data-price="920">Add</button></div>
         </article>
         <article class="ticket">
           <div class="top"><h3>Deal 3</h3><span class="who">FOR 1</span></div>
           <div class="deal-art" aria-hidden="true"><svg viewBox="0 0 400 360" style="--patty:#E3962F"><use href="#burger"/></svg><svg viewBox="0 0 300 320"><use href="#fries"/></svg><svg viewBox="0 0 200 300"><use href="#cup"/></svg></div>
           <ul><li>1 Zinger burger</li><li>1 drink, 345 ml</li><li>Regular fries</li></ul>
           <div class="tear"></div>
-          <div class="bottom"><b>Rs 600</b><a class="btn btn-green" href="https://wa.me/923194800036">Order</a></div>
+          <div class="bottom"><b>Rs 600</b><button class="btn btn-green" type="button" data-deal data-price="600">Add</button></div>
         </article>
         <article class="ticket alt">
           <div class="top"><h3>Deal 4</h3><span class="who">FOR 2</span></div>
           <div class="deal-art" aria-hidden="true"><svg viewBox="0 0 400 360" style="--patty:#E3962F"><use href="#burger"/></svg><svg viewBox="0 0 400 360" style="--patty:#E3962F"><use href="#burger"/></svg><svg viewBox="0 0 200 300"><use href="#cup"/></svg></div>
           <ul><li>2 Zinger burgers</li><li>2 drinks, 345 ml</li><li>Regular fries</li></ul>
           <div class="tear"></div>
-          <div class="bottom"><b>Rs 1100</b><a class="btn btn-ink" href="https://wa.me/923194800036">Order</a></div>
+          <div class="bottom"><b>Rs 1100</b><button class="btn btn-ink" type="button" data-deal data-price="1100">Add</button></div>
         </article>
       </div>
     </div>
@@ -522,6 +582,178 @@ footer{background:var(--green-deep);color:#D8EADD;padding-block:40px;border-top:
     </div>
   </section>
 </main>
+
+
+<button class="fab" type="button" data-open-cart hidden>
+  <span class="sum" data-fab-text>0 items · Rs 0</span>
+  <span class="go">View order</span>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<dialog class="cart" id="cart" aria-labelledby="cart-title">
+  <form class="cart-in" id="order-form" method="dialog" novalidate>
+    <div class="cart-head">
+      <h2 id="cart-title">Your order</h2>
+      <button class="x" type="button" data-close aria-label="Close">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#12140F" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart-body">
+      <div class="lines" id="lines"></div>
+      <div class="total"><span class="eyebrow">Total</span><b id="total">Rs 0</b></div>
+
+      <div class="form">
+        <div>
+          <span class="legend" id="type-label">Order type</span>
+          <div class="types" role="radiogroup" aria-labelledby="type-label" style="margin-top:6px">
+            <div><input type="radio" name="otype" id="ot-del" value="Home delivery" checked><label for="ot-del">Home delivery</label></div>
+            <div><input type="radio" name="otype" id="ot-take" value="Take away"><label for="ot-take">Take away</label></div>
+          </div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name" placeholder="e.g. Ali Raza"></div>
+          <div class="field"><label for="c-phone">Phone number</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="03xx-xxxxxxx"></div>
+        </div>
+        <div class="field">
+          <label for="c-branch">Branch</label>
+          <select id="c-branch" name="branch">
+            <option>Sialkot Road (near Meezan Bank)</option>
+            <option>Mumtaz Market (opp. Chase Up)</option>
+            <option>Kings Mall (Disposal Road)</option>
+          </select>
+        </div>
+        <div class="field" id="addr-wrap"><label for="c-addr">Delivery address</label><textarea id="c-addr" name="address" autocomplete="street-address" placeholder="House no, street, area, landmark"></textarea></div>
+        <div class="field"><label for="c-note">Notes (optional)</label><input id="c-note" name="note" placeholder="Wings flavour, extra sauce, less spicy..."></div>
+        <div class="err" id="err" role="alert"></div>
+      </div>
+    </div>
+    <div class="cart-foot">
+      <a class="btn send" id="send" href="https://wa.me/923194800036" target="_blank" rel="noopener">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Send order on WhatsApp
+      </a>
+      <p class="fine">Your order opens in WhatsApp, ready to send to 0319-4800036.</p>
+    </div>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  var WA='923194800036', KEY='sg-cart';
+  var cart=[];
+  try{cart=JSON.parse(localStorage.getItem(KEY)||'[]')||[];}catch(e){cart=[];}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(cart));}catch(e){}}
+  function rs(n){return 'Rs '+n.toLocaleString('en-PK');}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var toastEl=document.getElementById('toast'),tt;
+  function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(function(){toastEl.hidden=true;},1600);}
+
+  function add(name,detail,price,btn){
+    var id=name+'|'+(detail||'');
+    var f=cart.filter(function(x){return x.id===id;})[0];
+    if(f)f.q++;else cart.push({id:id,name:name,detail:detail||'',price:price,q:1});
+    save();render();
+    toast(name+(detail?' ('+detail+')':'')+' added');
+    if(btn){btn.classList.add('done');setTimeout(function(){btn.classList.remove('done');},700);}
+  }
+  function size(){var b=document.querySelector('[data-size][aria-pressed="true"]');return b?b.getAttribute('data-size'):'m';}
+
+  // Add buttons on every menu card
+  document.querySelectorAll('.card .card-foot').forEach(function(foot){
+    var card=foot.closest('.card'),name=card.querySelector('h3').textContent.trim();
+    var p=foot.querySelector('.price'),b=document.createElement('button');
+    b.type='button';b.className='add';b.innerHTML='<span aria-hidden="true">+</span> Add';
+    b.setAttribute('aria-label','Add '+name+' to order');
+    b.addEventListener('click',function(){
+      if(p.hasAttribute('data-m')){var s=size();add(name,s==='m'?'Medium':'Large',+p.getAttribute('data-'+s),b);}
+      else add(name,'',+p.textContent.replace(/[^0-9]/g,''),b);
+    });
+    foot.appendChild(b);
+  });
+  document.querySelectorAll('[data-item]').forEach(function(b){
+    b.addEventListener('click',function(){add(b.getAttribute('data-item'),b.getAttribute('data-detail')||'',+b.getAttribute('data-price'),b);});
+  });
+  document.querySelectorAll('[data-deal]').forEach(function(b){
+    var t=b.closest('.ticket'),name=t.querySelector('h3').textContent.trim();
+    var items=[].map.call(t.querySelectorAll('li'),function(l){return l.textContent.trim();}).join(', ');
+    b.setAttribute('aria-label','Add '+name+' to order');
+    b.addEventListener('click',function(){add(name,items,+b.getAttribute('data-price'),b);});
+  });
+
+  var dlg=document.getElementById('cart'),lines=document.getElementById('lines');
+  var fab=document.querySelector('.fab'),fabText=document.querySelector('[data-fab-text]');
+  var counts=document.querySelectorAll('[data-count]');
+  function totals(){var n=0,s=0;cart.forEach(function(x){n+=x.q;s+=x.q*x.price;});return{n:n,s:s};}
+
+  function render(){
+    var tt=totals();
+    counts.forEach(function(c){c.textContent=tt.n;c.hidden=!tt.n;});
+    fab.hidden=!tt.n;document.body.classList.toggle('has-cart',!!tt.n);
+    fabText.textContent=tt.n+(tt.n===1?' item':' items')+' · '+rs(tt.s);
+    document.getElementById('total').textContent=rs(tt.s);
+    if(!cart.length){
+      lines.innerHTML='<div class="empty">Your order is empty. Add pizzas, burgers or a deal from the menu.</div>';
+    }else{
+      lines.innerHTML=cart.map(function(x,i){
+        return '<div class="line"><div class="nm">'+esc(x.name)+(x.detail?'<small>'+esc(x.detail)+'</small>':'')+'</div>'+
+          '<div class="qty"><button type="button" data-dec="'+i+'" aria-label="One less '+esc(x.name)+'">−</button><span>'+x.q+'</span>'+
+          '<button type="button" data-inc="'+i+'" aria-label="One more '+esc(x.name)+'">+</button></div>'+
+          '<div class="lp">'+rs(x.q*x.price)+'</div></div>';
+      }).join('');
+    }
+    buildLink();
+  }
+  lines.addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    var i=+(b.getAttribute('data-inc')||b.getAttribute('data-dec'));
+    if(b.hasAttribute('data-inc'))cart[i].q++;
+    else{cart[i].q--;if(cart[i].q<1)cart.splice(i,1);}
+    save();render();
+  });
+
+  var form=document.getElementById('order-form'),send=document.getElementById('send'),err=document.getElementById('err');
+  var addrWrap=document.getElementById('addr-wrap');
+  function val(id){return document.getElementById(id).value.trim();}
+  function otype(){return form.querySelector('input[name="otype"]:checked').value;}
+  function problem(){
+    if(!cart.length)return 'Add at least one item to your order.';
+    if(!val('c-name'))return 'Please enter your name.';
+    if(val('c-phone').replace(/\D/g,'').length<10)return 'Please enter a valid phone number.';
+    if(otype()==='Home delivery'&&!val('c-addr'))return 'Please enter your delivery address.';
+    return '';
+  }
+  function message(){
+    var tt=totals(),L=[];
+    L.push('*New order - Seven Guys Pizza & Burger*','');
+    cart.forEach(function(x){L.push('• '+x.q+' x '+x.name+(x.detail?' ('+x.detail+')':'')+' = '+rs(x.q*x.price));});
+    L.push('','*Total: '+rs(tt.s)+'*','');
+    L.push('Name: '+val('c-name'),'Phone: '+val('c-phone'),'Order type: '+otype(),'Branch: '+val('c-branch'));
+    if(otype()==='Home delivery')L.push('Address: '+val('c-addr'));
+    if(val('c-note'))L.push('Notes: '+val('c-note'));
+    return L.join('\n');
+  }
+  function buildLink(){
+    var bad=problem();
+    send.setAttribute('aria-disabled',bad?'true':'false');
+    send.href='https://wa.me/'+WA+'?text='+encodeURIComponent(message());
+  }
+  form.addEventListener('input',function(){err.textContent='';buildLink();});
+  form.addEventListener('change',function(){addrWrap.hidden=otype()!=='Home delivery';buildLink();});
+  form.addEventListener('submit',function(e){e.preventDefault();});
+  send.addEventListener('click',function(e){
+    var bad=problem();
+    if(bad){e.preventDefault();err.textContent=bad;return;}
+    buildLink();
+    toast('Opening WhatsApp…');
+  });
+
+  function openCart(){render();if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');}
+  document.querySelectorAll('[data-open-cart]').forEach(function(b){b.addEventListener('click',openCart);});
+  dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  render();
+})();
+</script>
 
 <footer>
   <div class="wrap foot">
